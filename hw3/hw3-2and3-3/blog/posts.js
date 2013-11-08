@@ -83,7 +83,8 @@ function PostsDAO(db) {
         }
 
         // hw3.3 TODO
-        callback(Error("addComment NYI"), null);
+        //callback(Error("addComment NYI"), null);
+        posts.update({ "permalink" : permalink }, { "$push" : { "comments" : comment } }, callback);
     }
 }
 
